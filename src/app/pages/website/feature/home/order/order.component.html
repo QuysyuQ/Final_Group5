@@ -1,0 +1,95 @@
+<section class="order">
+    <div class="container">
+        <div class="order-top-wrap">
+            <div class="order-top">
+                <div class="order-top-order order-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="order-top-address order-top-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="order-top-payment order-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-top">
+        <div class="order-content">
+            <div class="order-content-left">
+                <p>Vui lòng nhập địa chỉ giao hàng</p>
+                <div class="order-content-left-input-top">
+                    <div class="order-content-left-input-top-item">
+                        <label for="">Họ và tên <span style="color: red;">*</span></label>
+                        <input type="text" name="fullName" id="fullName" [(ngModel)]="order.fullName">
+                    </div>
+                    <div class="order-content-left-input-top-item">
+                        <label for="">Số điện thoại <span style="color: red;">*</span></label>
+                        <input [(ngModel)]="order.phoneNumber" placeholder="Enter phone number" required>
+                    </div>
+                </div>
+                <div class="order-content-left-input-top">
+                    <div class="order-content-left-input-top-item">
+                        <label for="">Tỉnh/TP <span style="color: red;">*</span></label>
+                        <input type="text" name="city" id="city" [(ngModel)]="city">
+                    </div>
+                    <div class="order-content-left-input-top-item">
+                        <label for="">Quận/Huyện <span style="color: red;">*</span></label>
+                        <input type="text" name="district" id="district" [(ngModel)]="district">
+                    </div>
+                </div>
+                <div class="order-content-left-input-buttom">
+                    <label for="">Địa chỉ <span style="color: red;">*</span></label>
+                    <input type="text" name="address" id="address" [(ngModel)]="address">
+                </div>
+                <div class="order-content-left-input-buttom">
+                    <label for="">Ghi chú <span style="color: red;">*</span></label>
+                    <input type="text" name="Note" id="Note" [(ngModel)]="order.note">
+                </div>
+                <div class="mt-3">
+                    <label for="payToMoney" class="form-lable" >Phương thức thanh toán</label>
+                    <select name="payToMoney" id="payToMoney" class="form-control" style="width: 62%; margin: 0 20px; border: 1px solid #403f3f;" [(ngModel)]="order.payToMoneyId">    
+                        <ng-container *ngIf="payToMoneys$ | async as payToMoneys" >
+                            <option *ngFor="let payToMoney of payToMoneys" [value]="payToMoney.id">{{payToMoney.namePay}}</option>                  
+                        </ng-container>
+                    </select>  
+                    <!-- <form (ngSubmit)="onPayment()" #paymentForm="ngForm" *ngIf="order.payToMoneyId == 'A42447C3-8518-406B-2687-08DD36944F42'">
+                        <button type="submit" class="btn btn-primary">Thanh toán VNPay</button>
+                    </form> -->
+                </div>
+                <div class="order-content-left-buttom">
+                    <a href="cart"><span>&#171;</span>     Quay lại giỏ hàng</a>
+                    <div class="payment-button">
+                        <button (click)="(paymentConfirmation())"><p style="font-weight: bold;">THANH TOÁN VÀ GIAO HÀNG</p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="order-content-right">
+                    <table >
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <tr *ngFor="let product of productsInCart">
+                            <td>{{ getNameProduct(product.productId) }} </td>
+                            <td>{{ product.quantity }}</td>
+                            <td>{{ product.price * product.quantity }}<sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" solspan="3">Phí vận chuyển</td>
+                            <td></td>
+                            <td style="font-weight: bold;" *ngIf="productsInCart.length > 0"><p>38.000<sup>đ</sup></p></td>
+                            <td style="font-weight: bold;" *ngIf="productsInCart.length == 0" ><p>0<sup>đ</sup></p></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" solspan="3">Tổng</td>
+                            <td></td>
+                            <td style="font-weight: bold;" ><p>{{ totalPrice()  }}<sup>đ</sup></p></td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+</section>

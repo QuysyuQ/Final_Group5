@@ -1,0 +1,62 @@
+<div class="order-dashboard">
+    <div class="order-header">
+        <h1>Quản Lý Đơn Hàng</h1>
+    </div>
+    <div class="order-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Đơn Hàng</th>
+                    <th>Khách Hàng</th>
+                    <th>Tổng Tiền</th>
+                    <th>Trạng Thái</th>
+                    <th>Ngày Đặt</th>
+                    <th>Chi Tiết</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="orders$ | async as orders">
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.fullName}}</td>
+                    <td>{{order.totalMoney}} VND</td>
+                    <td><span class="status pending">{{ orderStatus(order.status)}}</span></td>
+                    <td> {{formatDate(order.orderDate)}} </td>
+                    <td><button class="btn btn-detail">Xem</button></td>
+                    <td>
+                        <button class="btn btn-confirm" *ngIf="order.status >= 0 && order.status < 3" (click)="updateStatusOrder(order.id)">Xác nhận</button>
+                        <button class="btn btn-cancel" *ngIf="order.status >= 0 && order.status < 3" (click)="deleteOrder(order.id)">Hủy</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <nav aria-label="Page navigation" >
+              <ul class="pagination d-flex justify-content-md-end justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" (click)="firstPage()" style="cursor: default;">Đầu</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" (click)="previousPage()" style="cursor: default;">Trang trước</a>
+                </li>
+                <li class="page-item col-md-1 col-2 px-0">
+                  <div class="input-group">
+                    <input type="number" min="1" [max]="totalPagination" class="form-control text-right rounded-0"
+                    placeholder="2" aria-label="Username" [value]="indexPagination"
+                    (input)="indexPaginationChange($event)" style="height: 38px ;width: 30px; margin: 0 5px; padding: 0;">
+                  </div>
+                </li>
+                <li class="page-item">
+                  <button class="btn btn-primary rounded-0" style="width: 30px;height: 38px; padding: 0;" (click)="findPagination()" >Đi</button>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" (click)="nextPage()" style="cursor: default;">Trang kế</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" (click)="lastPage()" style="cursor: default;">Cuối</a>
+                </li>
+              </ul>
+            </nav>
+          </div>    
+    </div>
+</div>

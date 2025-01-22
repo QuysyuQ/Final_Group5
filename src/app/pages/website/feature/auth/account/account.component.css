@@ -1,0 +1,124 @@
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.account {
+    margin: 0;
+    padding: 100px 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.account-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+}
+
+.left-sidebar {
+    width: 20%;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    height: 100%;
+    margin: 50px 20px;
+    border: 2px solid black;
+}
+
+.left-sidebar .avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.left-sidebar .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu .menu-item {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 15px 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu .menu-item:hover {
+    background-color: #34495e;
+}
+
+.logout {
+    background-color: #e74c3c;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+.right-content {
+    width: 80%;
+    padding: 30px;
+    color: #333;
+    margin: 0 40px;
+}
+
+.right-content h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.account-info {
+    margin-bottom: 30px;
+}
+
+.detail {
+    margin-bottom: 15px;
+}
+
+.detail label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detail input {
+    font-size: 16px;
+    width: 50%;
+    height: 24px;
+}
+
+.btn-edit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+}

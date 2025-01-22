@@ -1,0 +1,102 @@
+/* Reset một số thuộc tính mặc định */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
+
+.container {
+    width: 100%;
+    margin-top: 100px ;
+    margin-bottom: 100px;
+    max-width: 600px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-result {
+    text-align: center;
+}
+
+.status {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.status p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.transaction-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.transaction-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.transaction-details strong {
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.continue-shopping {
+    background-color: #28a745;
+    color: white;
+}
+
+.view-order {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

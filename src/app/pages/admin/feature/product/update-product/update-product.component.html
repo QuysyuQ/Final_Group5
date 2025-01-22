@@ -1,0 +1,128 @@
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-estate" ></i>
+            <span class="text"><H1>QUẢN LÝ SẢN PHẨM</H1></span>
+        </div>
+        <div class="container mt-5" style="margin-left: 8%;">
+            <div class="button-add">
+              <h3>Thêm sản phẩm</h3>
+            </div>
+            <div class="container mt-5">
+                <section class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="designer-finish.html" class="form-horizontal" role="form">
+                            <!-- Tên sản phẩm -->
+                            <div class="form-group">
+                                <label for="productName" class="col-sm-3 control-label">Tên sản phẩm</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="productName" id="productName" [(ngModel)]="product.title">
+                                </div>
+                                <div *ngIf="validationErrors.title" class="text-danger small">{{ validationErrors.title }}</div>
+                            </div>
+                            <!-- Mô tả -->
+                            <div class="form-group">
+                                <label for="description" class="col-sm-3 control-label">Mô tả</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="description" id="description" [(ngModel)]="product.description"></textarea>
+                                </div>
+                                <div *ngIf="validationErrors.description" class="text-danger small">{{ validationErrors.description }}</div>
+                            </div>
+                            <!-- Hướng dẫn bảo quản -->
+                            <div class="form-group">
+                                <label for="description" class="col-sm-3 control-label">Bảo quản</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="description" id="description" [(ngModel)]="product.preserve"></textarea>
+                                </div>
+                                <div *ngIf="validationErrors.preserve" class="text-danger small">{{ validationErrors.preserve }}</div>
+                            </div>
+                            <!-- Số lượng -->
+                            <div class="form-group">
+                                <label for="quantity" class="col-sm-3 control-label" >Số lượng</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="quantity" id="quantity" style="text-align :justify" [(ngModel)]="product.quantity">
+                                </div>
+                                <div *ngIf="validationErrors.quantity" class="text-danger small">{{ validationErrors.quantity }}</div>
+                            </div>
+                            <!-- Giá bán -->
+                            <div class="form-group">
+                                <label for="price" class="col-sm-3 control-label">Giá bán</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="price" id="price" [(ngModel)]="product.price">
+                                </div>
+                                <div *ngIf="validationErrors.price" class="text-danger small">{{ validationErrors.price }}</div>
+                            </div>
+                            <!-- Giá bán giảm giá -->
+                            <div class="form-group">
+                                <label for="price" class="col-sm-3 control-label">Giá bán khuyến mại</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="discount" id="discount" [(ngModel)]="product.discount">
+                                </div>
+                                <div *ngIf="validationErrors.discount" class="text-danger small">{{ validationErrors.discount }}</div>
+                            </div>
+                            <!-- Hình ảnh -->
+                            <div class="form-group">
+                                <label class="control-label small" for="file_img">Image (jpg/png):</label>
+                                <div class="col-sm-3">
+                                    <input type="file" name="file_img" (change)="onFileChange($event)" accept="image/*">
+                                    <img *ngIf="product.thumbnail" src="https://localhost:7042{{product.thumbnail}}" alt="thumbnail" style="max-width: 100px; margin-top: 10px;">
+                                </div>
+                                <div *ngIf="validationErrors.thumbnail" class="text-danger small">{{ validationErrors.thumbnail }}</div>
+                            </div>
+                            <!-- Danh mục -->
+                            <div class="form-group">
+                                <label for="categories" class="col-sm-3 control-label">Danh mục</label>
+                                <div class="col-sm-3">
+                                    <select class="form-control" name="categoryId" id="categoryId" [(ngModel)]="product.categoryId">
+                                        <ng-container *ngIf="categories$ | async as categories">
+                                            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                                        </ng-container>
+                                    </select>
+                                </div>
+                                <div *ngIf="validationErrors.categoryId" class="text-danger small">{{ validationErrors.categoryId }}</div>
+                            </div>
+                            <!-- size -->
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Kích thước</label>
+                                <div class="col-sm-9">
+                                  <div class="size-checkbox-container">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="sizeS" value="S" (change)="onSizeChange($event)">
+                                      <label class="form-check-label" for="sizeS">S</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="sizeM" value="M" (change)="onSizeChange($event)">
+                                      <label class="form-check-label" for="sizeM">M</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="sizeL" value="L" (change)="onSizeChange($event)">
+                                      <label class="form-check-label" for="sizeL">L</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="sizeXL" value="XL" (change)="onSizeChange($event)">
+                                      <label class="form-check-label" for="sizeXL">XL</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="sizeXXL" value="XXL" (change)="onSizeChange($event)">
+                                      <label class="form-check-label" for="sizeXXL">XXL</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div *ngIf="validationErrors.size" class="text-danger small">{{ validationErrors.size }}</div>
+                              </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-primary" style="width: 70px ;height: 50px;" (click)="onSave()">SAVE</button>
+                                    <button type="submit" class="btn btn-primary" style="width: 70px ;height: 50px; margin-left: 10px;" (click)="onBack()">BACK</button>
+                                </div>
+                            </div> <!-- form-group // -->
+                        </form>
+                        
+                    </div><!-- panel-body // -->
+                </section><!-- panel// -->
+            </div> <!-- container// -->
+        </div>    
+    </div>
+</div>
+
+

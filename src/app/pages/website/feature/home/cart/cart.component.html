@@ -1,0 +1,74 @@
+<section class="cart">
+    <div class="container">
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-top-address cart-top-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cart-content row">
+            <div class="cart-content-left">
+                <table *ngIf="productsInCart.length > 0">
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Màu sắc</th>
+                        <th>Size</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th>Xóa</th>
+                    </tr>
+                    <tr *ngFor="let product of productsInCart">
+                        <td>
+                            <img src="https://localhost:7042{{getImageProduct(product.productId)}}" alt="">
+                        </td>
+                        <td><p>{{ getNameProduct(product.productId) }}</p></td>
+                        <td></td>
+                        <td>{{product.size}}</td>
+                        <td><input type="number" name="" id="" value={{product.quantity}} (change)="onChangeQuantity(product,$event)" min="1" ></td>
+                        <td>{{product.price * product.quantity}}<sup>đ</sup></td>
+                        <td><Button (click)="onDeleteProductInCart(product)">X</Button></td>
+                    </tr>
+                </table>
+                <div *ngIf="productsInCart.length == 0" style="display: flex;">
+                    <h1>Giỏ hàng hiện có <span style="color: red;">0 sản phẩm</span></h1>
+                </div>
+            </div>
+            <div class="cart-content-right">
+                <table >
+                    <tr>
+                        <th colspan="2">Tổng tiền giỏ hàng</th>
+                    </tr>
+                    <tr>
+                        <td>Tổng sản phẩm</td>
+                        <td>{{ sumProduct() }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tổng tiền thành hàng</td>
+                        <td><p>{{ totalPrice() }}<sup>đ</sup></p></td>
+                    </tr>
+                    <tr>
+                        <td>Tạm tính</td>
+                        <td><p style="color: black; font-weight: bold;">{{ totalPrice() }}<sup>đ</sup></p></td>
+                    </tr>
+                    <div class="cart-content-right-text">
+                        <p>Bạn sẽ được nhận một quà tặng ngẫu nhiên khi mua với đơn hàng trên 2.000.000 <sup>đ</sup></p>
+                    </div>
+                    <div class="cart-content-right-button">
+                        <button (click)="backShopping()">TIẾP TỤC MUA SẮM</button>
+                        <button (click)="onOrder()">THANH TOÁN</button>
+                    </div>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

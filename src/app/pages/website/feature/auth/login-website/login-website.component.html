@@ -1,0 +1,33 @@
+<div class="login">
+    <div id="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Đăng nhập</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="getemail" class="form__input" name="email" autofocus placeholder="Username or email" [(ngModel)]="login.email" (change)="clearEmailError()" >
+                <div class="form__input-error-message">
+                    <div *ngIf="emailError" class="form__input-error-message" style="color: red; font-size: 12px;"> {{ emailError }}</div>
+                </div>
+            </div>
+    
+            <div class="form__input-group">
+                <input  [type]="passwordType" id="getpassword" class="form__input" name="password" autofocus placeholder="Password" [(ngModel)]="login.password" (change)="clearPasswordError()">
+                <div class="form__input-error-message">
+                    <div *ngIf="passwordError" class="form__input-error-message" style="color: red; font-size: 12px;">{{ passwordError }}</div>
+                </div>
+                <input type="checkbox" (change)="passwordVisibility($event)" > Hiện mật khẩu
+            </div>
+    
+            <button class="form__button" type="submit" (click)="onLogin()">Đăng nhập</button>
+    
+            <p class="form__text">
+                <a href="loginforgot" class="form__link">Bạn quên mật khẩu</a>
+            </p>
+    
+            <p class="form__text">
+                <a class="form__link" href="loginregister" id="linkCreateAccount">Bạn chưa có tài khoản ? Tạo tài khoản mới</a>
+            </p>
+        </form>
+    </div>
+</div>
+

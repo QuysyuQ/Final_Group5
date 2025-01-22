@@ -1,0 +1,182 @@
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.account {
+    margin: 0;
+    padding: 100px 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* height: 100vh; */
+}
+
+.account-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+}
+
+.left-sidebar {
+    width: 20%;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    height: 100%;
+    margin: 50px 20px;
+    border: 2px solid black;
+}
+
+.left-sidebar .avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.left-sidebar .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu .menu-item {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 15px 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu .menu-item:hover {
+    background-color: #34495e;
+}
+
+.logout {
+    background-color: #e74c3c;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+.right-content {
+    width: 80%;
+    padding: 30px;
+    color: #333;
+}
+
+.right-content h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.order-history {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order {
+    width :  100%;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-id {
+    font-weight: bold;
+}
+
+.order-date {
+    color: #777;
+}
+
+.order-products {
+    margin-bottom: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.order-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.order-status {
+    margin-top: 10px;
+}
+
+.order-status .status {
+    font-weight: bold;
+    padding: 5px 0;
+    border-radius: 4px;
+}
+
+.order-status .status.delivered {
+    background-color: #27ae60;
+    color: white;
+}
+
+.order-status .status.pending {
+    background-color: #f39c12;
+    color: white;
+}
+
+.order-status .status.canceled {
+    background-color: #e74c3c;
+    color: white;
+}
+.order-cancel {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.cancel-btn {
+    padding: 8px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel-btn:hover {
+    background-color: darkred;
+}

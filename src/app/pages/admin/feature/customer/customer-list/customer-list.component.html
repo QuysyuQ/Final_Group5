@@ -1,0 +1,99 @@
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-estate" ></i>
+            <span class="text"><H1>QUẢN LÝ KHÁCH HÀNG</H1></span>
+        </div>
+        <div class="container mt-5" style="margin-left: 8%;">
+            <div class="button-add">
+              <h3>Danh sách khách hàng</h3>
+              <a href="admin/customer/add"><button type="button" class="btn btn-success mt-4" ><i class="uil uil-plus"></i>Thêm</button></a>
+            </div>
+            <table class="table table-bordered" *ngIf="users$ | async as users">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên khách hàng</th>
+                  <th>Tên tài khoản</th>
+                  <th>Email</th>
+                  <th>SĐT</th>
+                  <th>Địa chỉ</th>
+                  <th>Trạng thái</th>
+                  <th>Số ngày offline</th>
+                  <th>Quyền</th>
+                  <th>Tùy chỉnh</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{user.id}}</td>
+                  <td>{{user.fullName}}</td>
+                  <td>{{user.userName}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.phoneNumber}}</td>
+                  <td>{{user.address}}</td>
+                  <td>{{user.isActive}}</td>
+                  <td>{{ getOfflineDay(user.online) }}</td>
+                  <td>{{ getRole(user.id) }}</td>
+                  <td class="active">
+                    <button type="button" class="btn btn-info" (click)="onEdit(user.id)"><i class="uil uil-edit"></i>  Sửa</button>
+                    <button type="button" class="btn btn-danger" (click)="onDelete(user.id)"><i class="uil uil-trash-alt"></i> Xóa</button>
+                    <button type="button" class="btn btn-success" style="width : 70px" (click)="openModal(content, user.email )"><i class="uil uil-envelope-edit" style="margin: 3px;"></i>Email</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- mở hộp thoại modal -->
+            <ng-template #content let-modal>
+          
+              <div class="email-form">
+                <div class="modal-header">
+                  <label for="recipientEmail">Email Người Nhận:</label>
+                  <button type="button" class="btn-close" (click)="modal.close()"></button>
+                </div>
+                <p>{{emailSend.recipientEmail}}</p>
+              
+                <label for="subject">Chủ đề:</label>
+                <input type="text" id="subject"  placeholder="Nhập chủ đề"  [(ngModel)]="emailSend.subject">
+              
+                <label for="body">Nội dung:</label>
+                <textarea id="body" placeholder="Nhập nội dung" [(ngModel)]="emailSend.body"></textarea>
+              
+                <button (click)="sendEmail()">Gửi Email</button>
+              </div>
+              
+            </ng-template>
+            <div class="pagination">
+              <nav aria-label="Page navigation" >
+                <ul class="pagination d-flex justify-content-md-end justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" (click)="firstPage()" style="cursor: default;">Đầu</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" (click)="previousPage()" style="cursor: default;">Trang trước</a>
+                  </li>
+                  <li class="page-item col-md-1 col-2 px-0">
+                    <div class="input-group">
+                      <input type="number" min="1" [max]="totalPagination" class="form-control text-right rounded-0"
+                      placeholder="2" aria-label="Username" [value]="indexPagination"
+                      (input)="indexPaginationChange($event)" style="height: 38px ;width: 30px; margin: 0 5px;">
+                    </div>
+                  </li>
+                  <li class="page-item">
+                    <button class="btn btn-primary rounded-0" style="width: 30px;height: 38px;" (click)="findPagination()" >Đi</button>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" (click)="nextPage()" style="cursor: default;">Trang kế</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" (click)="lastPage()" style="cursor: default;">Cuối</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>           
+          </div>
+    </div>
+</div>
+
+
+

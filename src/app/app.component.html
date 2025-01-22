@@ -1,0 +1,103 @@
+<!-- <div>
+    
+    <app-navbar-admin *ngIf="isAdminPage()"> </app-navbar-admin>
+    <app-user *ngIf="isUserPage()"></app-user>
+    
+    <router-outlet></router-outlet>
+</div>
+   -->
+
+
+<!-- Điều hướng cho admin  -->
+
+<div *ngIf="isAdminPage()">
+    <div class="paren" [ngClass]="{'dark' : isDarkMode}">
+        <nav>
+            <div class="logo-name">
+                <div class="logo-image">
+                   <img src="https://www.creativefabrica.com/wp-content/uploads/2019/02/Online-shop-shopping-shop-logo-by-DEEMKA-STUDIO-3.jpg" alt="">
+                </div>
+                <span class="logo_name">ADMIN</span>
+            </div>
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="admin/home">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Home</span>
+                    </a></li>
+                    <li><a href="admin/customer">
+                        <i class="uil uil-user"></i>
+                        <span class="link-name">Customer</span>
+                    </a></li>
+                    <li><a href="admin/product">
+                        <i class="uil uil-shopping-cart"></i>
+                        <span class="link-name">Product</span>
+                    </a></li>
+                    <li><a href="admin/order">
+                        <i class="uil uil-file-info-alt"></i>
+                        <span class="link-name">Order</span>
+                    </a></li>
+                    <li><a href="admin/category">
+                        <i class="uil uil-list-ul"></i>
+                        <span class="link-name">Category</span>
+                    </a></li>
+                </ul>
+                
+                <ul class="logout-mode">
+                    <li><a href="loginwebsite" (click)="onLogOut()">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+                    <li class="mode"  >
+                        <a>
+                            <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                        </a>
+                    <div class="mode-toggle" (click)="toggleDarkMode()">
+                      <span class="switch"></span>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </nav>
+        <section class="dashboard">
+            <div class="top">
+                <i class="uis uis-user"></i>
+                <div class="search-box">
+                    <i class="uil uil-search"></i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+
+                <div class="d-flex">
+                    <ng-container *ngIf="user===undefined;else showLogout">
+                      <a [routerLink]="['/loginwebsite']"  class="btn btn-outline-primary p-2 ">Login</a>
+                    </ng-container>
+                </div>
+            
+                  <ng-template #showLogout>
+                    <div class="d-flex align-items-center ">
+                      <span class="user-welcome" > Welcome {{user?.email}} </span>
+                      <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-vector-user-young-boy-avatar-icon-png-image_1538408.jpg" alt="" style="margin-right: 10%;">
+                    </div>
+                  </ng-template> 
+                </div>
+            
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</div>
+
+
+<!-- Điều hướng cho user -->
+<div *ngIf="!isLogOut() && !isAdminPage()">
+    <app-header-website></app-header-website>
+    <router-outlet></router-outlet>
+    <app-tail-website></app-tail-website>
+</div>
+
+
+<!-- Điều hướng cho LogOut và Login -->
+<div *ngIf="isLogOut()">
+    <router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,194 @@
+<section class="product">
+    <div class="container">
+        <div class="product-top">
+            <p>Trang chủ</p><span>&#10230;</span> <p>{{category.name}}</p><span>&#10230;</span> <p>{{product.title}}</p>
+        </div>
+        <div class="product-content row">
+            <div class="product-content-left row">
+                <div class="product-content-left-big-img" >
+                    <img src="https://localhost:7042{{product.thumbnail}}" alt="">
+                </div>
+                <div class="product-content-left-small-img">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/c3da3b71-72b4-e300-e246-001b42d330a7.jpg?w=540&h=756" alt="">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/cb351b25-dcfa-9500-dedc-001b43d340ee.jpg?w=540&h=756" alt="">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/a5b20c20-36e8-9600-f1ea-001b43d34484.jpg?w=540&h=756" alt="">
+                    <img src="https://cdn2.yame.vn/pimg/quan-jean-lung-gai-ong-ung-vai-cotton-mac-ben-bieu-tuong-dang-vua-gia-tot-seventy-seven-28-0023388/96a55c3b-ab04-9700-47ac-001b43d382a5.jpg?w=800" alt="">
+                </div>
+            </div>
+            <div class="product-content-right">
+                <div class="product-content-right-product-name">
+                    <h1>{{product.title}}</h1>
+                    <p>MSP : 57E2969</p>
+                </div>
+                <div class="product-content-right-product-price">
+                    <p>{{product.price}}<sup>đ</sup></p>
+                </div>
+                <!-- <div class="product-content-right-product-color">
+                    <p><span style="font-weight: bold;">Màu sắc</span>:Xanh Cổ Vịt Nhạt <span style="color: red;">*</span></p>
+                </div> -->
+                <div class="product-content-right-product-size">
+                    <p style="font-weight: bold;">Size</p>
+                    <div class="size">
+                        <span *ngFor="let size of product.size" (click)="selectSize(size)" [ngClass]="{'selected': size === this.cart.size}">{{size}}</span>
+                    </div>
+                    <p style="color: red;" *ngIf="!this.cart.size">Vui lòng chọn size</p>
+                </div>
+                <div class="quantity">
+                    <p style="font-weight: bold;">Số lượng</p>
+                    <input type="number" [(ngModel)]="cart.quantity" (ngModelChange)="onQuantityChange($event)" min="1" />
+
+                </div>
+                <div class="product-content-right-product-button">
+                    <button (click)="onAddProductToCart()"><i class="fas fa-shopping-cart"></i><p>MUA HÀNG</p></button>
+                    <button><p>TÌM TẠI CỬA HÀNG</p></button>
+                    <div class="product-content-right-product-button">
+                        <button (click)="openReviewModal()"><p>Đánh giá</p></button>
+                      </div>
+                    
+                </div>
+                <div class="product-content-right-product-icon">
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fas fa-phone-alt"></i><p>Hotline</p>
+                    </div>
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fas fa-comments"></i><p>Chat</p>
+                    </div>
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fas fa-envelope"></i><p>Mail</p>
+                    </div>
+                </div>
+                <div class="product-content-right-bottom">
+                    <div class="product-content-right-bottom-top" (click)="onMenu()">
+                        &#8744;
+                    </div>
+                    <div class="product-content-right-bottom-content-big" *ngIf="isMenu">
+                        <div class="product-content-right-bottom-content-title ">
+                            <div class="product-content-right-bottom-content-title-item chitiet" (click)="toggleDetail('chitiet')">
+                                <p>Chi tiết</p>
+                            </div>
+                            <div class="product-content-right-bottom-content-title-item baoquan" (click)="toggleDetail('baoquan')">
+                                <p>Bảo quản</p>
+                            </div>
+                            <div class="product-content-right-bottom-content-title-item">
+                                <p>Tham khảo size</p>
+                            </div> 
+                        </div>
+                        <div class="product-content-right-bottom-content">
+                            <div class="product-content-right-bottom-content-chitiet" *ngIf="isDetailVisible">
+                                {{product.description}}
+                            </div>
+                            <div class="product-content-right-bottom-content-baoquan" *ngIf="isPreserve">
+                                {{product.preserve}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- product-feedback section -->
+<section class="product-feedback">
+    <div class="product-feedback-title">
+      <p>ĐÁNH GIÁ SẢN PHẨM</p>
+    </div>
+  
+    <!-- Display all reviews -->
+    <div class="product-feedback-content">
+      <div class="product-feedback-reviews">
+        <div class="review" *ngFor="let review of reviews">
+          <div class="review-header">
+            <div class="review-user">
+              <strong>{{  'Người mua' }}</strong>
+            </div>
+            <div class="review-rating">
+              <span *ngFor="let vote of [1, 2, 3, 4, 5]" [ngClass]="{'selected': review.vote >= vote}">
+                &#9733;
+              </span>
+              <span class="rating-text">{{ review.vote }}/5</span>
+            </div>
+          </div>
+          <div class="review-comment">
+            <p>{{review.comment}}</p>
+          </div>
+          <div class="review-date">
+            
+          </div>
+        </div>
+      </div>
+  
+      <!-- Review submission form -->
+      <!-- Modal Template for Review Submission -->
+       
+      <ng-template #reviewModal let-modal>
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Đánh Giá Sản Phẩm</h5>
+              <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="submitReview(modal)">
+                    <div class="form-group">
+                      <label for="rating">Đánh giá (1-5 sao)</label>
+                      <input
+                        type="number"
+                        id="rating"
+                        [(ngModel)]="review.vote"
+                        name="rating"
+                        class="form-control"
+                        min="1"
+                        max="5"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="comment">Bình luận</label>
+                      <textarea
+                        id="comment"
+                        [(ngModel)]="review.comment"
+                        name="comment"
+                        class="form-control"
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi Đánh Giá</button>
+                  </form>
+                  
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      
+  
+    </div>
+  </section>
+  
+
+<!-- Modal Template -->
+<ng-template #content let-modal>
+
+</ng-template>
+
+  
+  
+
+
+<section class="product-other">
+    <div class="product-other-title">
+        <p>SẢN PHẨM KHÁC</p>
+    </div>
+    <div class="product-content" *ngIf="productsOther">
+        <div class="product-other-item" *ngFor="let productOrther of productsOther" >
+            <img src="https://localhost:7042{{productOrther.thumbnail}}" alt="" style="width : 100%; height: 80%;">
+            <a href="product/{{productOrther.categoryId}}/{{productOrther.id}}"><h1>{{productOrther.title}}</h1></a>
+            <div class="product-price-product-other">
+                <p>{{productOrther.discount}}<sup>đ</sup></p>
+                <p>{{productOrther.price}}<sup>đ</sup></p>
+            </div>
+        </div>
+    </div>
+</section>

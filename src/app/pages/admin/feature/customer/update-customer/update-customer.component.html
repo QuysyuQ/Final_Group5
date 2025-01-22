@@ -1,0 +1,78 @@
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-estate" ></i>
+            <span class="text"><H1>QUẢN LÝ KHÁCH HÀNG</H1></span>
+        </div>
+        <div class="container mt-5" style="margin-left: 8%;">
+            <div class="button-add">
+              <h3>Sửa thông tin khách hàng</h3>
+            </div>
+            <div class="container mt-5">
+                <section class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="designer-finish.html" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="fullName" class="col-sm-3 control-label">Tên khách hàng</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="fullName" id="fullName" [(ngModel)]="getUserId.fullName">
+                                </div>
+                                <div *ngIf="validationErrors.fullName" class="text-danger small">{{ validationErrors.fullName }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <label for="userName" class="col-sm-3 control-label">Tên tài khoản</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="userName" id="userName" [(ngModel)]="getUserId.userName">
+                                </div>
+                                <div *ngIf="validationErrors.userName" class="text-danger small">{{ validationErrors.userName }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <label for="email" class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="email" id="email" [(ngModel)]="getUserId.email">
+                                </div>
+                                <div *ngIf="validationErrors.email" class="text-danger small">{{ validationErrors.email }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <label for="password" class="col-sm-3 control-label" >Mật khẩu</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="password" id="password" style="text-align :justify" [(ngModel)]="getUserId.passwordHash">
+                                </div>
+                                <div *ngIf="validationErrors.password" class="text-danger small">{{ validationErrors.password }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <label for="phoneNumber" class="col-sm-3 control-label">Số điện thoại</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" [(ngModel)]="getUserId.phoneNumber" >
+                                </div>
+                                <div *ngIf="validationErrors.phoneNumber" class="text-danger small">{{ validationErrors.phoneNumber }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <label for="address" class="col-sm-3 control-label">Địa chỉ</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="address" id="address" [(ngModel)]="getUserId.address" >
+                                </div>
+                                <div *ngIf="validationErrors.address" class="text-danger small">{{ validationErrors.address }}</div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group-active" >
+                                <label for="userIsActive" class="form-label me-3">Customer is active</label>
+                                <div class="mt-3">
+                                    <input type="checkbox" id="userIsActive" name="userIsActive" class="form-check-input " [(ngModel)]="checkBox">
+                                </div>
+                            </div> <!-- form-group // -->
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-primary" style="width: 70px ;height: 50px;" (click)="onSave()">SAVE</button>
+                                    <button type="submit" class="btn btn-primary" style="width: 70px ;height: 50px; margin-left: 20px;" (click)="onBack()">BACK</button>
+                                </div>
+                            </div> <!-- form-group // -->
+                        </form>
+                        
+                    </div><!-- panel-body // -->
+                </section><!-- panel// -->
+            </div> <!-- container// -->
+        </div>    
+    </div>
+</div>
+
+

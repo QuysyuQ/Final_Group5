@@ -1,0 +1,83 @@
+<section class="category">
+    <div class="container">
+        <div class="category-top">
+            <p>Trang chủ</p><span>&#10230;</span> <p>{{category.name}}</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="category-left">
+                <ul>
+                    <li class="category-left-li"  (click)="toggleBlock(0,$event)"><a href="#">NỮ</a>
+                        <ul [class.block]="ulStates[0]">
+                            <li><a href="">HÀNG NỮ MỚI VỀ</a></li>
+                            <li><a href="">BEYOND TREND</a></li>
+                            <li><a href="">JEANS FOR JOY</a></li>
+                            <li><a href="">Quần jeans nữ</a></li>
+                        </ul>
+                    </li>
+                    <li class="category-left-li"  (click)="toggleBlock(1,$event)"><a href="">NAM</a>
+                        <ul [class.block]="ulStates[1]">
+                            <li><a href="">HÀNG NAM MỚI VỀ LOẠI 1</a></li>
+                            <li><a href="">BEYOND TREND</a></li>
+                            <li><a href="">JEANS FOR JOY</a></li>
+                            <li><a href="">Quần jeans nữ</a></li>
+                        </ul>
+                    </li>
+                    <li class="category-left-li"><a href="">TRẺ EM</a></li>
+                    <li class="category-left-li"><a href="">BỘ SƯU TẬP</a></li>
+                </ul>
+            </div>
+            <div class="category-right">
+                <div class="category-right-item">
+                    <div class="category-right-top-item">
+                        <p>DANH SÁCH SẢN PHẨM</p>
+                    </div>
+                    <div class="category-right-top-item">
+                        <button><span>Bộ lọc</span><i class="fas fa-sort-down"></i></button>
+                    </div>
+                    <div class="category-right-top-item">
+                        <select name="" id="" (change)="onSortChange($event)">
+                            <option value="">Sắp xếp</option>
+                            <option value="desc">Giá cao đến thấp</option>
+                            <option value="asc">Giá thấp đến cao</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="category-right-content row" *ngIf="products">
+                    <div class="category-right-content-item" *ngFor="let product of products">
+                        <img src="https://localhost:7042{{product.thumbnail}}">
+                        <a href="product/{{categoryId}}/{{product.id}}"><h1>{{ product.title}}</h1></a>
+                        <p>{{ product.price}}<sup>đ</sup></p>
+                    </div>
+                </div>
+            </div>    
+    </div>
+    <div class="pagination">
+      <nav aria-label="Page navigation" >
+        <ul class="pagination d-flex justify-content-md-end justify-content-center">
+          <li class="page-item">
+            <a class="page-link" (click)="firstPage()" style="cursor: default;">Đầu</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="previousPage()" style="cursor: default;">Trang trước</a>
+          </li>
+          <li class="page-item col-md-1 col-2 px-0">
+            <div class="input-group">
+              <input type="number" min="1" [max]="totalPagination" class="form-control text-right rounded-0"
+              placeholder="2" aria-label="Username" [value]="indexPagination"
+              (input)="indexPaginationChange($event)" style="height: 38px ;width: 30px; margin: 0 5px; padding: 0;">
+            </div>
+          </li>
+          <li class="page-item">
+            <button class="btn btn-primary rounded-0" style="width: 30px;height: 38px; padding: 0;" (click)="findPagination()" style="cursor: default;" >Đi</button>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="nextPage()" style="cursor: default;">Trang kế</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="lastPage()" style="cursor: default;">Cuối</a>
+          </li>
+        </ul>
+      </nav>
+    </div>            
+</section>

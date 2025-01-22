@@ -1,0 +1,139 @@
+.row {
+    display: flex;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:  #000;
+}
+.order {
+    padding: 100px 0;
+    width : 100%;
+}
+.container-top {
+    display: flex;
+    max-width: 90%;
+    width : 100%;
+    margin: 0 70px;
+}
+.order-top-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-top {
+    height: 2px;
+    width : 70%;
+    background-color: #dddddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 100px;
+}
+.order-top-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  #fff ;
+}
+.order-top-item i {
+    color: #dddddd;
+}
+.order-top-address {
+    border: 1px solid #0DB7EA;
+}
+.order-top-address i {
+    color: #0DB7EA ;
+}
+.order-content {
+    display: flex;
+    justify-content: space-between;
+    width : 90%;
+    margin-left: 12%;
+}
+.order-content-left {
+    width : 50%
+}
+.order-content-left p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.order-content-left-input-top {
+    display: flex;
+}
+.order-content-left-input-top-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin: 0 20px;
+}
+.order-content-left-input-top-item input {
+    width : 100%
+}
+.order-content-left-input-buttom {
+    margin: 0 20px;
+    flex-direction: column;
+    display: flex;
+}
+.order-content-left-input-buttom input {
+    width : 65%
+}
+.order-content-left-buttom a {
+    font-size: 16px;
+    color: #0DB7EA; 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.order-content-left-buttom a span {
+    font-size: 18px;
+    margin-right: 5px;
+}
+.order-content-left-buttom {
+    display: flex;
+    margin: 20px 70px 0 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.order-content-left-buttom button:hover {
+    background-color: black;
+    color: #fff;
+}
+.payment-button p {
+    margin : 5px;
+}
+.order-content-right {
+    width : 40%;
+    padding-left: 12px;
+    border-left: 2px solid #dddddd;
+    height: auto;
+}
+.order-content-right table {
+    width : 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+.order-content-right table tr th:first-child {
+    text-align: left;
+}
+.order-content-right table tr td {
+    padding: 6px 0 ;
+}
+.order-content-right table tr:nth-child(4) {
+    border-top: 2px solid #dddddd ;
+}
+.order-content-right table tr td:last-child {
+    text-align: right;
+}
+.order-content-right table tr td:first-child {
+    text-align: left;
+}

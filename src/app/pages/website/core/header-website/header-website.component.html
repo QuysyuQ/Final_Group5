@@ -1,0 +1,39 @@
+<header>
+    <div class="logo">
+        <a href=""><img src="https://logos-world.net/wp-content/uploads/2021/02/Sky-Logo.png" width="125px" height="45px" ></a>
+    </div>
+    <div class="menu" *ngIf="categories$ | async as categories">
+        <li *ngFor="let category of categories" ><a href="product/{{category.id}}">{{ category.name }}</a>
+        </li>
+    </div>
+    <div class="others">
+        <li>
+            <input placeholder="Tìm kiếm" type="text" [(ngModel)]="search">
+            <i class="fas fa-search" (click)="onSearch()"></i>
+        </li>
+        <li><a href="account"><i class="fas fa-user"></i></a></li>
+        <li><a href="cart"><i class="fa fa-shopping-bag"></i></a></li>
+    </div>
+</header>
+
+<!-- Modal để hiển thị kết quả tìm kiếm -->
+<ng-template #searchResultsModal let-modal>
+    <div class="modal-header" >
+      <h4 class="modal-title">Kết quả tìm kiếm</h4>
+      <button type="button" class="btn-close" (click)="modal.close()"></button>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="products?.length == 0">
+        <p>Không tìm thấy sản phẩm nào.</p>
+      </div>
+      <div *ngIf="products">
+        <div class="product-grid">
+            <div class="product-item" *ngFor="let product of products">
+                <a href="product/{{product.categoryId}}/{{product.id}}"><img src="https://localhost:7042{{product.thumbnail}}" alt="Product 1" class="product-image"></a>
+                <a href="product/{{product.categoryId}}/{{product.id}}"><h3 class="product-name">{{product.title}}</h3></a>
+                <p class="product-price">{{product.discount}} <sup>đ</sup></p>
+            </div>
+          </div> 
+      </div>
+    </div>
+</ng-template>

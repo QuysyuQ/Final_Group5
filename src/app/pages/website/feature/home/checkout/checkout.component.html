@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="payment-result">
+        <div class="status success" *ngIf="isPaymentSuccessful">
+            <h1>Thanh Toán Thành Công</h1>
+            <p>Cảm ơn bạn đã thanh toán sản phẩm. Đơn hàng của bạn đã được xác nhận và đang được xử lý.</p>
+        </div>
+
+        <div class="transaction-details" *ngIf="isPaymentSuccessful">
+            <p><strong>Mã đơn hàng:</strong> {{orderAddId}} </p>
+            <p><strong>Giá trị đơn hàng:</strong> {{this.order.totalMoney}} <sup>đ</sup></p>
+            <p><strong>Phương thức thanh toán:</strong> VNPay </p>
+        </div>
+
+        <div class="status failure" *ngIf="!isPaymentSuccessful">
+            <h1>Thanh Toán Thất Bại</h1>
+            <p>Rất tiếc, thanh toán của bạn không thành công. Vui lòng thử lại hoặc liên hệ với chúng tôi nếu cần hỗ trợ.</p>
+        </div>
+
+        <div class="buttons">
+            <button class="btn continue-shopping" onclick="window.location.href='';">Tiếp Tục Mua Sắm</button>
+            <button class="btn view-order" onclick="window.location.href='order-history';">Xem Lịch Sử Đơn Hàng</button>
+        </div>
+    </div>
+</div>

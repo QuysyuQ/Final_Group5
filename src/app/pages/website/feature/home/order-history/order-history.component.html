@@ -1,0 +1,45 @@
+<div class="account">
+    <div class="account-container">
+        <div class="left-sidebar">
+            <div class="avatar">
+                <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png" alt="Ảnh đại diện">
+            </div>
+            <div class="menu">
+                <button class="menu-item"><a href="account">Thông tin cá nhân</a></button>
+                <button class="menu-item"><a href="order-history">Đơn hàng</a></button>
+                <button class="menu-item logout" (click)="onLogOut()">Đăng xuất</button>
+            </div>
+        </div>
+        <div class="right-content" *ngIf="orders">
+                <h1>Lịch sử đặt hàng</h1>
+                <div class="order-history" >
+                    <div class="order" *ngFor="let order of orders">
+                        <div class="order-info">
+                            <span class="order-id" style="cursor: pointer;" (click)="onOrderDetail(order.id)" >Mã đơn : {{ order.id }}</span>
+                            <span class="order-date">{{ formatDate(order.orderDate) }}</span>
+                        </div>
+                        <div class="order-products" *ngIf="clickOrderDetail === order.id ">
+                            <div *ngIf="orderDetails.length > 0">
+                                <div class="product" *ngFor="let orderDetail of orderDetails">
+                                    <p><strong>Sản phẩm:</strong> {{getNameProduct(orderDetail.productId)}} </p>
+                                    <p><strong>Số lượng:</strong> {{orderDetail.num}} </p>
+                                    <p><strong>Đơn giá:</strong> {{orderDetail.price}} </p>
+                                    <p><strong>Tổng giá:</strong> {{orderDetail.price * orderDetail.num}} <sup>đ</sup></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            <strong>Tổng đơn hàng :</strong> {{ order.totalMoney }} <sup>đ</sup>
+                        </div>
+                        <div class="order-status">
+                            <strong class="status">Trạng thái :</strong> {{orderStatus(order.status)}}
+                        </div>
+                        <div class="order-cancel">
+                            <button class="cancel-btn" *ngIf="order.status <= 1" (click)="onCancelOrder(order.id)">Hủy đơn hàng</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
