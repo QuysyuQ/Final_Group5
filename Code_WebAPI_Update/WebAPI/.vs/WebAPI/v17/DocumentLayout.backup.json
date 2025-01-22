@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\clothingwebapi_update\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|solutionrelative:clothingwebapi_update\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\clothingwebapi_update\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|solutionrelative:clothingwebapi_update\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A84277BF-2481-46D7-8A33-FFBE277FB030}|WebAPI.Tests\\WebAPI.Tests.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\webapi.tests\\controller\\categorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A84277BF-2481-46D7-8A33-FFBE277FB030}|WebAPI.Tests\\WebAPI.Tests.csproj|solutionrelative:webapi.tests\\controller\\categorycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\clothingwebapi_update\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|solutionrelative:clothingwebapi_update\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\bll\\services\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|solutionrelative:bll\\services\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\bll\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|solutionrelative:bll\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\bll\\services\\service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCBB4DBA-FB12-4277-BFEE-3F20655E6550}|BLL\\BLL.csproj|solutionrelative:bll\\services\\service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\clothingwebapi_update\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{884871C1-D6EC-4860-8544-839ABD3BDFB6}|ClothingWebAPI_Update\\ClothingWebAPI_Update.csproj|solutionrelative:clothingwebapi_update\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A84277BF-2481-46D7-8A33-FFBE277FB030}|WebAPI.Tests\\WebAPI.Tests.csproj|c:\\users\\arkad\\onedrive\\m\u00E1y t\u00EDnh\\final\\code_webapi_update\\webapi\\webapi.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A84277BF-2481-46D7-8A33-FFBE277FB030}|WebAPI.Tests\\WebAPI.Tests.csproj|solutionrelative:webapi.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ClothingWebAPI_Update\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\appsettings.Development.json",
+              "RelativeToolTip": "ClothingWebAPI_Update\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-22T10:24:04.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\appsettings.json",
+              "RelativeDocumentMoniker": "ClothingWebAPI_Update\\appsettings.json",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\appsettings.json",
+              "RelativeToolTip": "ClothingWebAPI_Update\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-22T10:23:56.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\IService\\IProductService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\IService\\IProductService.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\IService\\IProductService.cs",
+              "RelativeToolTip": "BLL\\Services\\IService\\IProductService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T13:13:27.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ClothingWebAPI_Update\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ClothingWebAPI_Update\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T08:44:12.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\Service\\ProductService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\Service\\ProductService.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\Service\\ProductService.cs",
+              "RelativeToolTip": "BLL\\Services\\Service\\ProductService.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAuwLUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T08:43:39.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\Service\\CartService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\Service\\CartService.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\BLL\\Services\\Service\\CartService.cs",
+              "RelativeToolTip": "BLL\\Services\\Service\\CartService.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T07:46:44.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FeedbackController.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\Controllers\\FeedbackController.cs",
+              "RelativeDocumentMoniker": "ClothingWebAPI_Update\\Controllers\\FeedbackController.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\ClothingWebAPI_Update\\Controllers\\FeedbackController.cs",
+              "RelativeToolTip": "ClothingWebAPI_Update\\Controllers\\FeedbackController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T16:18:49.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\WebAPI.Tests\\Controller\\CategoryControllerTests.cs",
+              "RelativeDocumentMoniker": "WebAPI.Tests\\Controller\\CategoryControllerTests.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\WebAPI.Tests\\Controller\\CategoryControllerTests.cs",
+              "RelativeToolTip": "WebAPI.Tests\\Controller\\CategoryControllerTests.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAuwIwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T15:45:58.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\WebAPI.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "WebAPI.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\arkad\\OneDrive\\M\u00E1y t\u00EDnh\\Final\\Code_WebAPI_Update\\WebAPI\\WebAPI.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "WebAPI.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T15:43:42.466Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
